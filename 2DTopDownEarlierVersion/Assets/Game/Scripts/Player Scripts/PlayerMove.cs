@@ -10,7 +10,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Camera MainCamera;
     [SerializeField] private Vector2 MiejsceWSwiecie;
     [SerializeField] private Vector2 RuchGracza;
-    [Range(1, 50)] [SerializeField] private float Velocity;
+    [Range(1, 50)] [SerializeField] private float standardVelocity;
+    [Range(70, 150)] [SerializeField] private float shiftVelocity;
+
+    private float velocity;
 
     public Vector2 WektorObrotuGracza;
 
@@ -19,6 +22,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        velocity = standardVelocity;
     }
     void Update()
     {
@@ -26,18 +30,29 @@ public class PlayerMove : MonoBehaviour
         TurnPlayer();
         RuchGracza.x = Input.GetAxis("Horizontal");
         RuchGracza.y = Input.GetAxis("Vertical");
+        Run();
     }
 
     private void FixedUpdate()
     {
         float kat = Mathf.Atan2(WektorObrotuGracza.y, WektorObrotuGracza.x) * Mathf.Rad2Deg;
         rb.rotation = kat - 90;
-        rb.MovePosition(rb.position + RuchGracza * Velocity * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + RuchGracza * velocity * Time.fixedDeltaTime);
     }
     void TurnPlayer()
     {
         WektorObrotuGracza = MiejsceWSwiecie - (Vector2)transform.position;
     }
 
-
+    void Run()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            velocity = shiftVelocity;
+        }
+        else
+        {
+            velocity = standardVelocity;
+        }
+    }
 }

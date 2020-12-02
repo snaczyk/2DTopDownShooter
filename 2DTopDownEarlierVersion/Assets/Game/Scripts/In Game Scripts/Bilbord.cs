@@ -12,5 +12,8 @@ public sealed class Bilbord : MonoBehaviour
 
         transform.position = characterPosition.position;
         transform.position += boundary;
+
+        /*Vector3 rot = new Vector3(0f, 0f, 0f);
+        transform.rotation.*/
     }
 }

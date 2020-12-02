@@ -46,7 +46,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -128,7 +127,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -210,7 +208,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -295,7 +292,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -349,6 +345,7 @@ MonoBehaviour:
   playerPosition: {fileID: 0}
   shootingRange: 40
   fireRate: 0.2
+  ActualEnemyPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5306951945340363734
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5306951945364078422
 Transform:
   m_ObjectHideFlags: 0
@@ -444,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f677987245fdb494f97875ec6b37bcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameHandlerScript: {fileID: 0}
   targetRange: 80
   enemySpeed: 15
   playerPosition: {fileID: 0}
@@ -514,7 +512,6 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

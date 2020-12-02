@@ -49,7 +49,7 @@ public class UI_Inventory : MonoBehaviour
 
         int x = 0;
         int y = 0;
-        float itemSlotCellSize = 220f;
+        float itemSlotCellSize = 370f;
         foreach (Item item in inventory.GetItemList())
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
@@ -72,6 +72,7 @@ public class UI_Inventory : MonoBehaviour
             Image image  = itemSlotRectTransform.Find("image").GetComponent<Image>();
             image.sprite = item.GetSprite();
             TextMeshProUGUI uiText = itemSlotRectTransform.Find("text").GetComponent<TextMeshProUGUI>();
+
             if (item.Amount > 1)
             {
                 uiText.SetText(item.Amount.ToString());
